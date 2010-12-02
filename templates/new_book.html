@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}
+    New book form
+{% endblock %}
+
+{% block content%}
+    <form action="{{ url_for('create_book') }}" method="post" accept-charset="utf-8">
+        <p>
+            <label for="name">Name:</label>
+            <input type="text" name="name" value="{{ book_name }}" id="name"/>
+        </p>
+        <p><input type="submit" value="Save!"/></p>
+    </form>
+{% endblock %}

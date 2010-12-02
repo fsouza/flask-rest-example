@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Books list
+{% endblock %}
+
+{% block content %}
+
+    {% for msg in get_flashed_messages() %}
+        <p>{{ msg }}</p>
+    {% endfor %}
+
+    <ul>
+        {% for book in books %}
+            <li>{{ book.id }} - {{ book.name }} (<a href="{{ url_for('delete_book', id=book.id, __METHOD_OVERRIDE__='DELETE') }}">Delete</a>)</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

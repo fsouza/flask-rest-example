@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Show book {{ book.name }}
+{% endblock %}
+
+{% block content %}
+    
+    {% for msg in get_flashed_messages() %}
+        <p>{{ msg }}</p>
+    {% endfor %}
+
+    <h1 id="">Book</h1>
+
+    <p>
+        <strong>Id:</strong> {{ book.id }}<br />
+        <strong>Name:</strong> {{ book.name }}
+    </p>
+{% endblock %}
